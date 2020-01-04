@@ -40,7 +40,19 @@ const requestHandler = (req,res) => {
     res.end();
 
 }
+// module.exports = requestHandler;
 
-module.exports = requestHandler; //register requstHandler
+// module.exports = {
+//     handler: requestHandler,
+//     text: 'a test message pass through'
+
+// }; 
+
+// module.exports.handler = requestHandler;
+// module.exports.text = 'some hard message';
+
+
+exports.handler = requestHandler;
+exports.text = 'some hard message';
 
 
