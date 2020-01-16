@@ -1,17 +1,23 @@
 const express = require('express');
+const path = require('path');
+
+const rootdir = require('../helper/path');
 
 const Router = express.Router();
 
+const products = [];
 
-Router.get('/test', (req, res, next) => {
-    console.log('call next');
-    res.send('<form action="/product" method="POST"><input type="text" name="title"><input type="submit" value="send">');
+
+Router.get('/product', (req, res, next) => {
+    res.render('product', {message:'test'});
 });
 
 Router.post('/product', (req, res, next) => {
-    console.log(req.body);
+    products.push({title: req.body.title});
+    
     res.redirect('/');
 
 });
 
-module.exports = Router;
+exports.routes = Router;
+exports.products = products;
