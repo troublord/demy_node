@@ -9,7 +9,7 @@ const products = [];
 
 
 Router.get('/product', (req, res, next) => {
-    res.render('product', {message:'test'});
+    res.render('product', {message:'加新產品'});
 });
 
 Router.post('/product', (req, res, next) => {
